@@ -1,0 +1,10 @@
+sudo brew services start mongodb-community@6.2
+mongosh - to start
+use collage - to create & use a new database called "collage"
+
+BSON data
+Binary json
+
+
+Document : mongo stores data in form of documents (BSON docs)
+Collection : MongoDB stores documents in collections.

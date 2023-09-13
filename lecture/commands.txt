@@ -1,10 +1,55 @@
 sudo brew services start mongodb-community@6.2
-mongosh - to start
-use collage - to create & use a new database called "collage"
-
 BSON data
 Binary json
 
 
 Document : mongo stores data in form of documents (BSON docs)
 Collection : MongoDB stores documents in collections.
+
+------- commands --------------
+
+🔸mongosh 🚀 to start
+
+🔸use collage 🚀 to create & use a new database called "collage"
+
+🔸db.student.insertOne({name:"dev",mark:50}) 🚀 create collection student and insert data into student.
+
+🔸db.student.insertMany([{name:"pavan",mark:80},{name:"ajay",mark:90}]) 🚀 insert multiple data into student.
+
+🔸db.student.updateOne() 🚀 insert multiple data into student.
+
+🔸show collections 🚀 to show collections
+
+🔸db.student.find() 🚀 to find data from student collection
+
+🔸db.student.find({name:"pavan"}) 🚀 to find for specific queries
+
+🔸db.student.findOne({name:"pavan"}) 🚀  queries its return first match
+
+🔸db.student.find({mark:{$gt:75}}) 🚀  find student where marks > 75
+
+🔸db.student.find({mark:{$gte:75}}) 🚀  find student where marks >= 75
+
+🔸db.student.find({name:{$in:["pavan","ajay"]}}) 🚀  find student whose names is pavan and ajay
+
+🔸db.student.find({$or:[{mark:{$gte:85}},{name:{$in:["pev","ajay"]}}]}) 🚀    student who scored >75 or name is pev and ajay
+
+🔸db.student.updateOne({name:"ajay"},{$set:{mark:99}}) 🚀  updates at most a single document thar match a specified even though muliple documents many match the specified filter
+
+🔸db.student.updateMany({name:"ajay"},{$set:{mark:99}}) 🚀  updates at most a many document thar match a specified even though muliple documents many match the specified filter
+
+🔸db.student.replaceOne({name:"ajay"},{name:"aju",city:"mandsaur",mark:58}) 🚀  updates at most a many document thar match a specified even though muliple documents many match the specified filter
+
+🔸db.student.insertOne({name:"tony",performace:{mark:45,grade:"A"}}) 🚀 insert nested data
+
+🔸db.student.find({"performace.mark":45}) 🚀 find nested data
+
+🔸db.student.deleteOne({name:"ajay"})
+
+🔸db.student.deleteMany({name:"ajay"})
+
+🔸db.dropDatabase()
+
+ 
+
+

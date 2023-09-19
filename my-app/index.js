@@ -63,6 +63,13 @@ app.put("/chats/:id" , async (req,res) =>{
   }
   })
 
+  // delete chat
+  app.delete("/chats/:id" , async (req,res) =>{
+    let id = req.params.id;
+    let chat = await Chats.findByIdAndDelete(id)
+    res.redirect("/")
+  })
+
 //? listen app
 app.listen(8080, () => {
   connectDB();

@@ -4,18 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit chat</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .formDiv {
+        display: flex;
+        padding-top: 100px;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(166, 172, 170, 0.634);
+        height: 100vh;
+        margin: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+      }
+      input,
+      textarea,
+      button {
+        padding: 7px 15px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: rgba(14, 104, 126, 0.481);
+        color: white;
+      }
+      button {
+        cursor: pointer;
+        background-color: blueviolet;
+        color: white;
+        font-weight: 800;
+        font-size: 18px;
+      }
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+    </style>
   </head>
   <body>
     <div>
-      <div>
-        <h3>Edit Your Chat...</h3>
-        <p>This chat was send from <%= chat.from %> to <%= chat.to %></p>
-      </div>
-      <div>
+      <div class="formDiv">
+        <div>
+          <h3>Edit Your Chat...</h3>
+          <p>This chat was send from <%= chat.from %> to <%= chat.to %></p>
+        </div>
         <h3><%= chat._id %></h3>
-        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT" >
-          <textarea name="msg" id="msg" cols="50" rows="10"><%= chat.msg %> </textarea>
-          <button type="submit">Create Chat</button>
+        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+          <textarea name="msg" id="msg" cols="50" rows="10">
+<%= chat.msg %> </textarea
+          >
+          <button type="submit">Edit Chat</button>
         </form>
       </div>
     </div>

@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Chat</title>
+ <style>
+    *{
+        margin: 0;
+    }
+    .formDiv{
+        display: flex;
+      padding-top: 100px;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(166, 172, 170, 0.634);
+        height: 100vh;
+        margin: 0;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
+    input,textarea,button{
+   padding: 7px 15px;
+   border-radius: 5px;
+   outline: none;
+   border: none;
+ background-color: rgba(14, 104, 126, 0.481);
+ color: white;
+    }
+    button{
+        cursor: pointer;
+        background-color: blueviolet;
+        color: white;
+        font-weight: 800;
+        font-size: 18px;
+    }
+ </style>
 </head>
 <body>
     <div>
-        <div><h3>Write a New Chat...</h3></div>
-        <div>
+        <div class="formDiv">
+            <div><h3>Write a New Chat...</h3></div>
             <form method="POST" action="/chats">
                 <input type="text" placeholder="Enter Your Name" name="from">
                 <textarea name="msg" id="msg" cols="30" rows="10" >Write Your Message </textarea>

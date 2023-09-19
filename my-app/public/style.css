@@ -33,9 +33,10 @@ align-items: center;
 button{
     cursor: pointer;
     padding: 5px 8px;
-    margin-bottom: 5px;
     border-radius: 6px;
     box-shadow: 2px 2px 5px black;
     border: none;
     float: right;
+    margin: 15px 6px;
 }
+ 
